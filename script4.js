@@ -2,11 +2,11 @@
 
 // Callback Function
 function show() {
-    console.log("I am show function");
+  console.log("I am show function");
 }
 
 function geeky(callback) {
-    callback();
+  callback();
 }
 
 geeky(show);
@@ -21,11 +21,12 @@ geeky(show);
 
 // Promise creation using new (Promise produce)
 // executor function -> (resolve, reject)
-const pobj1 = new Promise((resolve, reject) => { // Promise as function construtor
+const pobj1 = new Promise((resolve, reject) => {
+  // Promise as function construtor
   setTimeout(() => {
     let roll_no = [1, 2, 3, 4, 5];
-    // resolve(roll_no);
-    reject("Error while communicating");
+    resolve(roll_no);
+    // reject("Error while communicating");
   }, 2000);
 });
 
@@ -38,10 +39,8 @@ pobj1
     console.log(err);
   });
 
-
-
-
-const getBiodata = (indexdata) => {     // Promise as an object
+const getBiodata = (indexdata) => {
+  // Promise as an object
   return new Promise((resolve, reject) => {
     setTimeout(
       (indexdata) => {
@@ -57,15 +56,43 @@ const getBiodata = (indexdata) => {     // Promise as an object
   });
 };
 
-getBiodata(1).then( (res) => {
-     console.log(res);
-})
+getBiodata(1).then((res) => {
+  console.log(res);
+});
 
+// Async/await
+// The word async before a function means one simple thing: async function always returns a promise.
+// So async keyword is added to functions to tell them to return a promise rather than directly returning the value.
+// We can use await when calling any function that returns a Promise, including Web API functions.
+// The keyword await makes javaScript wait until that promise settles and returns its result.
 
+async function getData() {
+  const rollnodata = await pobj1;
+  console.log(`In Async fun + ${rollnodata}`);
 
+  return rollnodata;
+}
+
+const data = getData().then((data) => {
+  console.log(data);
+});
+
+async function harry() {
+  console.log("Inside harry function");
+  const response = await fetch("https://api.github.com/users");
+  console.log("Before Response");
+  const users = await response.json();
+  console.log("Users resolved");
+  return users;
+}
+
+let a = harry();
+console.log(a);
+a.then((data) => {
+  console.log(data);
+});
 
 /*
-
 // const abc = (arg) => {
 //     return arg;
 // }
@@ -80,6 +107,5 @@ const anc2 = (props) => { // abc2 ka wrapper hai abc
 
  const abc = (arg) => {
     return arg;
- }
-    
+ }  
  */

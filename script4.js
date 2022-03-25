@@ -1,3 +1,5 @@
+const fetch = require("node-fetch");
+
 // Asynchronous JavaScript
 
 // Callback Function
@@ -77,20 +79,47 @@ const data = getData().then((data) => {
   console.log(data);
 });
 
-async function harry() {
-  console.log("Inside harry function");
-  const response = await fetch("https://api.github.com/users");
-  console.log("Before Response");
-  const users = await response.json();
-  console.log("Users resolved");
-  return users;
+// async function harry() {
+//   console.log("Inside harry function");
+//   const response = await fetch("https://api.github.com/users");
+//   console.log("Before Response");
+//   const users = await response.json();
+//   console.log("Users resolved");
+//   return users;
+// }
+
+// let a = harry();
+// console.log(a);
+// a.then((data) => {
+//   console.log(data);
+// });
+
+const demo = async () => {
+  console.log("Inside Demo Function");
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  const data = await response.json();
+  return data;
+};
+
+let b = demo();
+console.log(b);
+b.then((data) => {
+  console.log(`107 hello ${data}`);
+}).catch((err) => console.log("108 err12"));
+
+
+function getData1() {
+    console.log("Started getData");
+    url = "https://jsonplaceholder.typicode.com/todos/1";
+    fetch(url).then((response) => {
+        console.log("115 Inside first then");
+        return response.text();
+    }).then((data) => {
+        console.log(data + " 118 Inside second then");
+    })
 }
 
-let a = harry();
-console.log(a);
-a.then((data) => {
-  console.log(data);
-});
+getData1();
 
 /*
 // const abc = (arg) => {

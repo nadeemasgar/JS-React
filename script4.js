@@ -1,3 +1,16 @@
+// Asynchronous JavaScript
+
+// Callback Function
+function show() {
+    console.log("I am show function");
+}
+
+function geeky(callback) {
+    callback();
+}
+
+geeky(show);
+
 // 1 Pending,  2 Resolve, 3 Reject
 
 // Promise Constructor
@@ -48,6 +61,11 @@ getBiodata(1).then( (res) => {
      console.log(res);
 })
 
+
+
+
+/*
+
 // const abc = (arg) => {
 //     return arg;
 // }
@@ -64,3 +82,4 @@ const anc2 = (props) => { // abc2 ka wrapper hai abc
     return arg;
  }
     
+ */

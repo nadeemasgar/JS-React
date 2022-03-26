@@ -1,28 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
-import StateDemo from "./components/StateDemo";
-import { useState } from "react";
+// import Parent from "./components/example1/Parent";
+import Login from "./components/example2/login/Login"
 
 function App() {
-  const [isFlag, setFlag] = useState(true);
-  let val;
-
-  if (isFlag) {
-    val = "Nadeem";
-  } else {
-    val = "Asgar";
-  }
-
-  const changeVal = () => {
-    setFlag(() => {
-      return !isFlag;
-    });
-  };
-
   return (
     <div className="App">
-      <StateDemo val={val} />
-      <button onClick={changeVal}>Click</button>
+      {/* <Parent /> */}
+      <Login />
     </div>
   );
 }

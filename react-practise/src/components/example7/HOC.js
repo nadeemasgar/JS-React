@@ -1,7 +1,19 @@
 import React from "react";
 
-const HOC = (props) => {
-  return <props.cmp {...props} />;
+export const HOCRed = (props) => {
+  const css = {
+    backgroundColor: "red",
+    width: "auto",
+  };
+
+  return <props.cmp style={css} increment={10} />;
 };
 
-export default HOC;
+export const HOCGreen = (props) => {
+  const css = {
+    backgroundColor: "green",
+    width: "auto",
+  };
+
+  return <props.cmp style={css} increment={5} />;
+};

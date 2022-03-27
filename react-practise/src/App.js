@@ -6,8 +6,6 @@ import "./App.css";
 // import ParentMemo from "./components/example4/Parent";
 // import Parent5 from "./components/example5/Parent5";
 // import Parent6 from "./components/example6/Parent6";
-import { HOCRed } from "./components/example7/HOC";
-import { HOCGreen } from "./components/example7/HOC";
 import Counter from "./components/example7/Counter";
 
 function App() {
@@ -19,8 +17,8 @@ function App() {
       {/* <ParentMemo /> */}
       {/* <Parent5 /> */}
       {/* <Parent6 /> */}
-      <HOCRed cmp={Counter} />
-      <HOCGreen cmp={Counter} />
+      <Counter color="red" />
+      <Counter color="green" />
     </div>
   );
 }

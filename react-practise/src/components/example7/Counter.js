@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import HOC from "./HOC";
-
-let color;
 
 const Counter = (props) => {
   const [count, setCount] = useState(0);
@@ -9,8 +6,6 @@ const Counter = (props) => {
   const updateCount = () => {
     setCount((prevCount) => prevCount + props.increment);
   };
-
-  color = props.color;
 
   return (
     <>
@@ -20,4 +15,4 @@ const Counter = (props) => {
   );
 };
 
-export default HOC(Counter, color);
+export default Counter;

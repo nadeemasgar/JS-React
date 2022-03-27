@@ -3,7 +3,8 @@ import "./App.css";
 // import Parent from "./components/example1/Parent";
 // import Login from "./components/example2/login/Login"
 // import ListRendering from "./components/example3/ListRendering";
-import ParentMemo from "./components/example4/Parent";
+// import ParentMemo from "./components/example4/Parent";
+import Parent5 from "./components/example5/Parent5";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       {/* <Parent /> */}
       {/* <Login /> */}
       {/* <ListRendering /> */}
-      <ParentMemo />
+      {/* <ParentMemo /> */}
+      <Parent5 />
     </div>
   );
 }

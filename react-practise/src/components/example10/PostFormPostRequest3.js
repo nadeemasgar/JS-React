@@ -6,6 +6,10 @@ const obj = { userId: "", title: "", body: "" };
 function PostFormPostRequest3() {
   const [Object, setObject] = useState(obj);
 
+//   useEffect(() => {
+//     console.log(Object);
+//   }, [Object]);
+
   const inputUserId = useRef("");
   const inputTitle = useRef("");
   const inputBody = useRef("");
@@ -19,7 +23,7 @@ function PostFormPostRequest3() {
       body: inputBody.current.value,
     };
 
-    console.log(userData);
+    // console.log(userData);
 
     axios
       .post("https://jsonplaceholder.typicode.com/posts", userData)
@@ -29,6 +33,8 @@ function PostFormPostRequest3() {
       .catch((error) => {
         console.log(error);
       });
+
+    setObject(prevState => userData );
 
     inputUserId.current.value = "";
     inputTitle.current.value = "";
@@ -62,7 +68,11 @@ function PostFormPostRequest3() {
         </div>
         <button type="submit">Submit</button>
       </form>
+      <div>{Object.userId}</div>
+      <div>{Object.title}</div>
+      <div>{Object.body}</div>
     </>
+    
   );
 }
 

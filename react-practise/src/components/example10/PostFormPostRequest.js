@@ -6,40 +6,13 @@ import axios from "axios";
 const obj = { userId: "", title: "", body: "" };
 function PostFormPostRequest() {
   const [Object, setObject] = useState(obj);
-  const [isSubmit, setIsSubmit] = useState(false);
 
   const inputUserId = useRef("");
   const inputTitle = useRef("");
   const inputBody = useRef("");
 
-  //   useEffect(() => {
-  //     axios
-  //       .post("https://jsonplaceholder.typicode.com/posts", Object)
-  //       .then((response) => {
-  //         console.log(response);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   }, [Object]);
-
-  if (isSubmit) {
-    axios
-      .post("https://jsonplaceholder.typicode.com/posts", Object) // Object has no value
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    // setIsSubmit(false);
-  }
-
   const submitHandler = (e) => {
     e.preventDefault();
-
-    setIsSubmit(true);
 
     const userData = {
       userId: inputUserId.current.value,
@@ -47,16 +20,21 @@ function PostFormPostRequest() {
       body: inputBody.current.value,
     };
 
-    setObject((prevState) => userData);
+    const helper = async () => {
+      setObject((prevState) => userData);
+      return userData;
+    };
 
-    // axios
-    //   .post("https://jsonplaceholder.typicode.com/posts", Object)  // Object has no value bcz of asynchronous
-    //   .then((response) => {
-    //     console.log(response);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    helper().then((response) => {
+      axios
+        .post("https://jsonplaceholder.typicode.com/posts", response)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    });
 
     console.log(userData);
 

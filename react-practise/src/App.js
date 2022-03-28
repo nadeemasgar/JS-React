@@ -11,8 +11,9 @@ import { HOCGreen } from "./components/example7/HOC";
 import Counter from "./components/example7/Counter"; */
 /* import ComponentA from "./components/example8/ComponentA";
 import { UserProvider } from "./components/example8/useContext"; */
-import ComponentA from "./components/example9/ComponentA";
-import { UserProvider } from "./components/example9/useContext";
+/* import ComponentA from "./components/example9/ComponentA";
+import { UserProvider } from "./components/example9/useContext"; */
+import PostListGetRequest from "./components/example10/PostListGetRequest";
 
 function App() {
   const obj = {
@@ -29,9 +30,10 @@ function App() {
       {/* <Parent6 /> */}
       {/*  <HOCRed cmp={Counter} />
       <HOCGreen cmp={Counter} /> */}
-      <UserProvider value={obj}>
+      {/* <UserProvider value={obj}>
         <ComponentA />
-      </UserProvider>
+      </UserProvider> */}
+      <PostListGetRequest />
     </div>
   );
 }

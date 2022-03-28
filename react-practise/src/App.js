@@ -14,6 +14,9 @@ import { UserProvider } from "./components/example8/useContext"; */
 /* import ComponentA from "./components/example9/ComponentA";
 import { UserProvider } from "./components/example9/useContext"; */
 import PostListGetRequest from "./components/example10/PostListGetRequest";
+import PostFormPostRequest from "./components/example10/PostFormPostRequest";
+import PostFormPostRequest2 from "./components/example10/PostFormPostRequest2";
+import PostFormPostRequest3 from "./components/example10/PostFormPostRequest3";
 
 function App() {
   const obj = {
@@ -33,7 +36,10 @@ function App() {
       {/* <UserProvider value={obj}>
         <ComponentA />
       </UserProvider> */}
-      <PostListGetRequest />
+      {/* <PostListGetRequest /> */}
+      <PostFormPostRequest />
+      {/* <PostFormPostRequest2 /> */}
+      {/* {<PostFormPostRequest3 />} */}
     </div>
   );
 }

@@ -3,6 +3,7 @@ import axios from "axios";
 
 const PostListGetRequest = () => {
   const [posts, setPost] = useState([]);
+  const [Error, setError] = useState(false);
 
   useEffect(() => {
     axios
@@ -13,12 +14,15 @@ const PostListGetRequest = () => {
       })
       .catch((error) => {
         console.log("Error Occured");
+        setError(true);
       });
   }, []);
 
   return (
     <>
-      <div>******************** List of Posts ********************</div>
+     
+      {!Error &&  <div>******************** List of Posts ********************</div>}
+      {Error && <div>******************** Error Occured ********************</div>}
       {posts.map((post) => {
         return <div key={post.id}>{post.title}</div>;
       })}

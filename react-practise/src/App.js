@@ -13,10 +13,11 @@ import Counter from "./components/example7/Counter"; */
 import { UserProvider } from "./components/example8/useContext"; */
 /* import ComponentA from "./components/example9/ComponentA";
 import { UserProvider } from "./components/example9/useContext"; */
-import PostListGetRequest from "./components/example10/PostListGetRequest";
+/* import PostListGetRequest from "./components/example10/PostListGetRequest";
 import PostFormPostRequest from "./components/example10/PostFormPostRequest";
 import PostFormPostRequest2 from "./components/example10/PostFormPostRequest2";
-import PostFormPostRequest3 from "./components/example10/PostFormPostRequest3";
+import PostFormPostRequest3 from "./components/example10/PostFormPostRequest3"; */
+import ComponentA from "./components/example11/ComponentA";
 
 function App() {
   const obj = {
@@ -37,9 +38,10 @@ function App() {
         <ComponentA />
       </UserProvider> */}
       {/* <PostListGetRequest /> */}
-      <PostFormPostRequest />
+      {/* <PostFormPostRequest /> */}
       {/* <PostFormPostRequest2 /> */}
       {/* {<PostFormPostRequest3 />} */}
+      <ComponentA />
     </div>
   );
 }

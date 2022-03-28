@@ -1,6 +1,6 @@
 // Why the state value is not changing
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 
 const obj = { userId: "", title: "", body: "" };
@@ -20,21 +20,16 @@ function PostFormPostRequest() {
       body: inputBody.current.value,
     };
 
-    const helper = async () => {
-      setObject((prevState) => userData);
-      return userData;
-    };
+    setObject((prevState) => userData);
 
-    helper().then((response) => {
-      axios
-        .post("https://jsonplaceholder.typicode.com/posts", response)
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    });
+    axios
+      .post("https://jsonplaceholder.typicode.com/posts", userData) // Object State has no value bcz of asynchronous
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
     console.log(userData);
 
@@ -45,7 +40,9 @@ function PostFormPostRequest() {
 
   return (
     <>
-      <div>********************* PostFormPostRequest *********************</div>
+      <div>
+        ********************* PostFormPostRequest24 *********************
+      </div>
       <form onSubmit={submitHandler}>
         <div>
           <input

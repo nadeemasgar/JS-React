@@ -19,7 +19,10 @@ import PostFormPostRequest2 from "./components/example10/PostFormPostRequest2";
 import PostFormPostRequest3 from "./components/example10/PostFormPostRequest3"; */
 // import ComponentA from "./components/example11/ComponentA";
 // import HookMouse from "./components/example12/HookMouse";
-import MouseContainer from "./components/example12/MouseContainer";
+// import MouseContainer from "./components/example12/MouseContainer";
+// import IntervalHookCounter from "./components/example13/IntervalHookCounter";
+// import IntervalHookCounter2 from "./components/example13/IntervalHookCounter2";
+import IntervalHookCounter3 from "./components/example13/IntervalHookCounter3";
 
 function App() {
   const obj = {
@@ -45,7 +48,10 @@ function App() {
       {/* {<PostFormPostRequest3 />} */}
       {/* <ComponentA /> */}
       {/* <HookMouse /> */}
-      <MouseContainer />
+      {/* <MouseContainer /> */}
+      {/* <IntervalHookCounter /> */}
+      {/* <IntervalHookCounter2 /> */}
+      <IntervalHookCounter3 />
     </div>
   );
 }

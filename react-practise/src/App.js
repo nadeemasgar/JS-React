@@ -29,7 +29,8 @@ import PostFormPostRequest3 from "./components/example10/PostFormPostRequest3"; 
 // import CounterTwo from "./components/example16/CounterTwo";
 // import CounterThree from "./components/example16/CounterThree";
 // import CounterFour from "./components/example16/CounterFour";
-import CounterFive from "./components/example16/CounterFive";
+// import CounterFive from "./components/example16/CounterFive";
+import Parent from "./components/example17/Parent";
 
 function App() {
   const obj = {
@@ -65,7 +66,8 @@ function App() {
       {/* <CounterTwo /> */}
       {/* <CounterThree /> */}
       {/* <CounterFour /> */}
-      <CounterFive />
+      {/* <CounterFive /> */}
+      <Parent />
     </div>
   );
 }

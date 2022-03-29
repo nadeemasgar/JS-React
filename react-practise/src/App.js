@@ -31,7 +31,8 @@ import PostFormPostRequest3 from "./components/example10/PostFormPostRequest3"; 
 // import CounterFour from "./components/example16/CounterFour";
 // import CounterFive from "./components/example16/CounterFive";
 // import Parent from "./components/example17/Parent";
-import DataFetching from "./components/example18/DataFetching";
+// import DataFetching from "./components/example18/DataFetching";
+import Counter from "./components/example19/Counter";
 
 function App() {
   const obj = {
@@ -69,7 +70,8 @@ function App() {
       {/* <CounterFour /> */}
       {/* <CounterFive /> */}
       {/* <Parent /> */}
-      <DataFetching />
+      {/* <DataFetching /> */}
+      <Counter />
     </div>
   );
 }

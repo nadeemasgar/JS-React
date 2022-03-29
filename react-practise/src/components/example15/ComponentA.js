@@ -1,12 +1,13 @@
 import React from "react";
 import ComponentB from "./ComponentB";
-
-export const UserContext = React.createContext();
+import { UserContext, ChannelContext } from "./Context";
 
 function ComponentA() {
   return (
     <UserContext.Provider value={"Nadeem"}>
-      <ComponentB />
+      <ChannelContext.Provider value={"Codevolution"}>
+        <ComponentB />
+      </ChannelContext.Provider>
     </UserContext.Provider>
   );
 }

@@ -17,7 +17,9 @@ import { UserProvider } from "./components/example9/useContext"; */
 import PostFormPostRequest from "./components/example10/PostFormPostRequest";
 import PostFormPostRequest2 from "./components/example10/PostFormPostRequest2";
 import PostFormPostRequest3 from "./components/example10/PostFormPostRequest3"; */
-import ComponentA from "./components/example11/ComponentA";
+// import ComponentA from "./components/example11/ComponentA";
+// import HookMouse from "./components/example12/HookMouse";
+import MouseContainer from "./components/example12/MouseContainer";
 
 function App() {
   const obj = {
@@ -41,7 +43,9 @@ function App() {
       {/* <PostFormPostRequest /> */}
       {/* <PostFormPostRequest2 /> */}
       {/* {<PostFormPostRequest3 />} */}
-      <ComponentA />
+      {/* <ComponentA /> */}
+      {/* <HookMouse /> */}
+      <MouseContainer />
     </div>
   );
 }

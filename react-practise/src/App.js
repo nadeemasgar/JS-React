@@ -22,7 +22,8 @@ import PostFormPostRequest3 from "./components/example10/PostFormPostRequest3"; 
 // import MouseContainer from "./components/example12/MouseContainer";
 // import IntervalHookCounter from "./components/example13/IntervalHookCounter";
 // import IntervalHookCounter2 from "./components/example13/IntervalHookCounter2";
-import IntervalHookCounter3 from "./components/example13/IntervalHookCounter3";
+// import IntervalHookCounter3 from "./components/example13/IntervalHookCounter3";
+import DataFetching from "./components/example14/DataFetching";
 
 function App() {
   const obj = {
@@ -51,7 +52,8 @@ function App() {
       {/* <MouseContainer /> */}
       {/* <IntervalHookCounter /> */}
       {/* <IntervalHookCounter2 /> */}
-      <IntervalHookCounter3 />
+      {/* <IntervalHookCounter3 /> */}
+      <DataFetching />
     </div>
   );
 }

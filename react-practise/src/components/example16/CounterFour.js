@@ -43,7 +43,7 @@ function CounterFour() {
         </button>
       </div>
 
-      <div> FirstCounter {count.secondCount}</div>
+      <div> SecondCounter {count.secondCount}</div>
       <div>
         <button onClick={() => dispatch({ type: "increment2", value: 1 })}>
           SecondCounter Increment by 1

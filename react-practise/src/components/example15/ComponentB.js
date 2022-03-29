@@ -1,8 +1,16 @@
-import React from "react";
-import ComponentC from "./ComponentC";
+import React, { useContext } from "react";
+
+import { UserContext, ChannelContext } from "./Context";
 
 function ComponentB() {
-  return <ComponentC />;
+  const user = useContext(UserContext);
+  const channel = useContext(ChannelContext);
+
+  return (
+    <div>
+      ComponentB {user} - {channel}
+    </div>
+  );
 }
 
 export default ComponentB;

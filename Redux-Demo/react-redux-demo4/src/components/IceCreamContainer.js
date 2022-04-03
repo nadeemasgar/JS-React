@@ -13,7 +13,7 @@ function IceCreamContainer() {
 
   return (
     <div>
-      <span>CakeContainer - {numOfIceCream} </span>
+      <span>IceCreamContainer - {numOfIceCream} </span>
       <input type="text" value={number} onChange={changeHandler} />
       <button onClick={() => dispatch(buyIceCream(number))}> Buy Cake</button>
     </div>

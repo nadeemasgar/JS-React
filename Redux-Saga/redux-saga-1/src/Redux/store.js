@@ -3,7 +3,7 @@ import logger from "redux-logger";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { reducer } from "./index";
 import createSagaMiddleware from "redux-saga";
-import { watcherSaga } from "./saga/mySaga";
+import { watcherSaga } from "./sagas/Saga";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -13,7 +13,5 @@ const store = createStore(
 );
 
 sagaMiddleware.run(watcherSaga);
-store.dispatch({ type: "HELLO" });
-// store.dispatch({ type: "BYE" });
 
 export default store;

@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
 function UsersContainer(props) {
-  return <div>Users Container - {props.loading}</div>;
+  useEffect(() => {
+    props.fetch();
+  }, []);
+
+  return (
+    <>
+      <div>************* Users Container *************</div>
+      {props.loading && <div>Loading...</div>}
+      {props.users.map((user) => {
+        return <div key={user.id}>{user.name}</div>;
+      })}
+      {!props.loading && <div>Error</div>}
+    </>
+  );
 }
 
 const mapStateToProps = ({ loading, users, error }) => {
@@ -13,8 +26,10 @@ const mapStateToProps = ({ loading, users, error }) => {
   };
 };
 
-// const mapDispatchToProps = (dispatch) => {
-//   return () => {};
-// };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetch: () => dispatch({ type: "FETCH" }),
+  };
+};
 
-export default connect(mapStateToProps, null)(UsersContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);

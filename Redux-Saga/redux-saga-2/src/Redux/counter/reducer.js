@@ -6,10 +6,10 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case INCREMENT:
-      return { state: state + 1 };
+    case "INCREMENT_ASYNC":
+      return { count: state.count + 1 };
     case DECREMENT:
-      return { state: state - 1 };
+      return { count: state.count - 1 };
     default:
       return state;
   }

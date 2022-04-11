@@ -19,7 +19,7 @@ test('returns winner', () => {
   utils.getWinner.mock = {calls: []}
   const winner = thumbWar('Ken Wheeler', 'Kent C. Dodds') 
   expect(winner).toBe('Kent C. Dodds')
-  // console.log(utils.getWinner.mock.calls);
+  console.log(utils.getWinner.mock.calls);
   expect(utils.getWinner.mock.calls).toEqual([
     ['Ken Wheeler', 'Kent C. Dodds'],
     ['Ken Wheeler', 'Kent C. Dodds']

@@ -193,3 +193,28 @@ const logDetails = (uid: StringOrNum, item: string) => {
 const greet2 = (user: objWithName) => {
   console.log(`${user.name} says hello`);
 };
+
+/* 7. Function Signature */
+
+let gree: (a: string, b: string) => void;
+gree = (name: string, greeting: string) => {
+  console.log(`${name} says ${greeting}`);
+};
+
+let calc: (a: number, b: number, c: string) => number;
+
+calc = (numOne: number, numTwo: number, action: string) => {
+  if (action === "add") {
+    return numOne + numTwo;
+  } else {
+    return numOne - numTwo;
+  }
+};
+
+let logDetails1: (obj: { name: string; age: number }) => void;
+
+type person = { name: string; age: number };
+
+logDetails1 = (ninja: person) => {
+  console.log(`${ninja.name} is ${ninja.age} years old`);
+};

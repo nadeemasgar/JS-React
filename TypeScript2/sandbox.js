@@ -129,3 +129,21 @@ var logDetails = function (uid, item) {
 var greet2 = function (user) {
     console.log("".concat(user.name, " says hello"));
 };
+/* 7. Function Signature */
+var gree;
+gree = function (name, greeting) {
+    console.log("".concat(name, " says ").concat(greeting));
+};
+var calc;
+calc = function (numOne, numTwo, action) {
+    if (action === "add") {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
+};
+var logDetails1;
+logDetails1 = function (ninja) {
+    console.log("".concat(ninja.name, " is ").concat(ninja.age, " years old"));
+};

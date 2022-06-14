@@ -58,3 +58,47 @@ ninja.name = "ryu";
 //   belt: "black",
 //   age: 30,
 // };
+
+/* 3. Explicit Types */
+
+// - For Variables
+let student_Name: string;
+let student_age: number;
+let isLoggedIn: boolean;
+
+// age = "luigi"  // Its wrong
+age = 20;
+isLoggedIn = false;
+
+// - For Arrays
+let ninjas: string[];
+
+// ninjas.push("shaun"); // You can use push method before defining it as arrays
+ninjas = ["nadeem", "asgar"];
+
+let array2: string[] = [];
+ninjas.push("shaun");
+
+// - union types -> for creating mixed array & for normal variable containing boolean, number, string
+let mixedArray: (string | number)[] = [];
+mixedArray.push("hello");
+mixedArray.push(2);
+// mixedArray.push(false); // This is wrong
+
+let uid: string | number;
+uid = "123";
+uid = 123;
+
+// - objects
+let ninjaOne: object;
+ninjaOne = { name: "yoshi", age: 30 };
+ninjaOne = []; // This is allowed as array is also an object
+
+let ninjaTwo: {
+  name: string;
+  age: number;
+  beltColour: string;
+};
+
+ninjaTwo = { name: "mario", age: 20, beltColour: "black" };
+// This is how we explicitly type our variable before we give then a value

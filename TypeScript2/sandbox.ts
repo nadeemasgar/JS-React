@@ -102,3 +102,72 @@ let ninjaTwo: {
 
 ninjaTwo = { name: "mario", age: 20, beltColour: "black" };
 // This is how we explicitly type our variable before we give then a value
+
+/* 4. Dynamic (any) Types */
+
+let man_age: any = 25;
+man_age = true;
+man_age = "hello";
+man_age = { name: "luigi" };
+
+let mixed1: any[] = [];
+mixed1.push(5);
+mixed1.push("mario");
+mixed1.push(false);
+
+let obj: { name: any; age: any };
+obj = { name: "yoshi", age: 25 };
+obj = { name: 25, age: "yoshi" };
+
+// tsc --init -> to initialize the tsconfig.json file
+// tsc filename -> to convert typescript into javaScript
+
+/* 5. Function Basics */
+
+let greet = () => {
+  console.log("hello, world");
+};
+
+// greet = "hello"; // This is an error
+
+let greet1: Function;
+
+greet = () => {
+  console.log("hello, again");
+};
+
+const add = (a: number, b: number) => {
+  console.log(a + b);
+};
+
+add(5, 10);
+
+let add1 = (a: number, b: number, c?: number | string) => {
+  // passing optional Parameter
+  console.log(a + b);
+};
+
+add1(5, 10);
+
+let add2 = (a: number, b: number, c: number | string = 10) => {
+  // Setting a default value while passing optional parameter. So ? marked is not needed when we set the default values
+  // Always put default and optional parameter at the end of the parameters
+  console.log(a + b);
+};
+
+add2(5, 10, "20");
+
+// when a function return a value
+const minus = (a: number, b: number): number => {
+  // (): number is used to represent the return type
+  return a - b;
+};
+
+let result = minus(10, 5);
+
+const minus1 = (a: number, b: number): void => {
+  // (): void is used to represent the return type
+  console.log(a - b);
+};
+
+minus1(10, 5);

@@ -73,3 +73,53 @@ ninjaOne = []; // This is allowed as array is also an object
 var ninjaTwo;
 ninjaTwo = { name: "mario", age: 20, beltColour: "black" };
 // This is how we explicitly type our variable before we give then a value
+/* 4. Dynamic (any) Types */
+var man_age = 25;
+man_age = true;
+man_age = "hello";
+man_age = { name: "luigi" };
+var mixed1 = [];
+mixed1.push(5);
+mixed1.push("mario");
+mixed1.push(false);
+var obj;
+obj = { name: "yoshi", age: 25 };
+obj = { name: 25, age: "yoshi" };
+// tsc --init -> to initialize the tsconfig.json file
+// tsc filename -> to convert typescript into javaScript
+/* 5. Function Basics */
+var greet = function () {
+    console.log("hello, world");
+};
+// greet = "hello"; // This is an error
+var greet1;
+greet = function () {
+    console.log("hello, again");
+};
+var add = function (a, b) {
+    console.log(a + b);
+};
+add(5, 10);
+var add1 = function (a, b, c) {
+    // passing optional Parameter
+    console.log(a + b);
+};
+add1(5, 10);
+var add2 = function (a, b, c) {
+    if (c === void 0) { c = 10; }
+    // Setting a default value while passing optional parameter. So ? marked is not needed when we set the default values
+    // Always put default and optional parameter at the end of the parameters
+    console.log(a + b);
+};
+add2(5, 10, "20");
+// when a function return a value
+var minus = function (a, b) {
+    // (): number is used to represent the return type
+    return a - b;
+};
+var result = minus(10, 5);
+var minus1 = function (a, b) {
+    // (): void is used to represent the return type
+    console.log(a - b);
+};
+minus1(10, 5);

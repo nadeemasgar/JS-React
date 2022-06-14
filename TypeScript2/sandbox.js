@@ -123,3 +123,9 @@ var minus1 = function (a, b) {
     console.log(a - b);
 };
 minus1(10, 5);
+var logDetails = function (uid, item) {
+    console.log("".concat(item, " has a uid of ").concat(uid));
+};
+var greet2 = function (user) {
+    console.log("".concat(user.name, " says hello"));
+};

@@ -171,3 +171,25 @@ const minus1 = (a: number, b: number): void => {
 };
 
 minus1(10, 5);
+
+/* 6. Type Aliases */
+// Sometimes, the type specification of the parameter in function becomes quite long
+
+/* const logDetails = (uid: string | number, item: string) => {
+  console.log(`${item} has a uid of ${uid}`);
+};
+
+const greet2 = (user: { name: string; uid: string | number }) => {
+  console.log(`${user.name} says hello`);
+}; */
+
+type StringOrNum = string | number;
+type objWithName = { name: string; uid: StringOrNum };
+
+const logDetails = (uid: StringOrNum, item: string) => {
+  console.log(`${item} has a uid of ${uid}`);
+};
+
+const greet2 = (user: objWithName) => {
+  console.log(`${user.name} says hello`);
+};

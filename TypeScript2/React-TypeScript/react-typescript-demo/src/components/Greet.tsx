@@ -1,11 +1,18 @@
+// Typing the basic data type props
 type GreetProps = {
   name: string;
+  messageCount: number;
+  isLoggedIn: boolean;
 };
 
 export const Greet = (props: GreetProps) => {
   return (
     <div>
-      <h2>Welcome {props.name}! How are you</h2>
+      <h2>
+        {props.isLoggedIn
+          ? `Welcome {props.name}! You have {props.messageCount} unread messages`
+          : `Welcome Guests`}
+      </h2>
     </div>
   );
 };

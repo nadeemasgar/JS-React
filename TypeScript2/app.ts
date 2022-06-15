@@ -1,3 +1,4 @@
+/* 1. DOM & Type Casting */
 const anchor = document.querySelector("a")!;
 
 // console.log(anchor.href); // There is warning while accessing anchor property
@@ -28,7 +29,7 @@ form1.addEventListener("submit", (e: Event) => {
   console.log(type.value, toform.value, details.value, amount.valueAsNumber);
 });
 
-// Classes
+/*  2. Classes */
 
 class Invoice {
   readonly client: string; // readonly is used to read the value inside & outside of the class
@@ -55,6 +56,8 @@ invoices.push(invTwo);
 
 console.log(invoices);
 
+/* 3. Puble, Private, Readonly */
+
 class test {
   //   readonly name: string;
   //   private age: number;
@@ -73,3 +76,36 @@ class test {
 
 const man1 = new test("rahul", 30, "male");
 console.log(man1);
+
+/* 4. Interfaces */
+
+// Interfaces allows you to enforce a certain structure of a class or an object
+// We donot use interface to generate object
+// Interfaces inforces the rule on a variable
+
+interface IsPerson {
+  name: string;
+  age: number;
+  speak(a: string): void;
+  spend(a: number): number;
+}
+
+const me: IsPerson = {
+  name: "shaun",
+  age: 30,
+  speak(text: string): void {
+    console.log(text);
+  },
+  spend(amount: number): number {
+    console.log("I spent ", amount);
+    return amount;
+  },
+};
+
+const greetPerson = (person: IsPerson) => {
+  console.log("hello ", person.name);
+};
+
+greetPerson(me);
+
+console.log(me);

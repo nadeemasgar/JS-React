@@ -1,3 +1,4 @@
+/* 1. DOM & Type Casting */
 var anchor = document.querySelector("a");
 // console.log(anchor.href); // There is warning while accessing anchor property
 // ! is added to define that it will always return a definite value and not null.
@@ -19,7 +20,7 @@ form1.addEventListener("submit", function (e) {
     e.preventDefault();
     console.log(type.value, toform.value, details.value, amount.valueAsNumber);
 });
-// Classes
+/*  2. Classes */
 var Invoice = /** @class */ (function () {
     function Invoice(c, d, a) {
         this.client = c;
@@ -37,6 +38,7 @@ var invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
 console.log(invoices);
+/* 3. Puble, Private, Readonly */
 var test = /** @class */ (function () {
     //   readonly name: string;
     //   private age: number;
@@ -53,3 +55,19 @@ var test = /** @class */ (function () {
 }());
 var man1 = new test("rahul", 30, "male");
 console.log(man1);
+var me = {
+    name: "shaun",
+    age: 30,
+    speak: function (text) {
+        console.log(text);
+    },
+    spend: function (amount) {
+        console.log("I spent ", amount);
+        return amount;
+    }
+};
+var greetPerson = function (person) {
+    console.log("hello ", person.name);
+};
+greetPerson(me);
+console.log(me);

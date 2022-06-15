@@ -1,3 +1,14 @@
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 /* 1. DOM & Type Casting */
 var anchor = document.querySelector("a");
 // console.log(anchor.href); // There is warning while accessing anchor property
@@ -100,3 +111,40 @@ docTwo = new Payment("luigi", "plumbing work", 200);
 var docs = [];
 docs.push(docOne);
 docs.push(docTwo);
+/* 6. Generics */
+// Generics allows us to create reusable blocks of code which can be used with different types
+/*
+const addUID = (obj: object) => {
+  let uid = Math.floor(Math.random() * 100);
+  return { ...obj, uid };
+};
+
+let docThree = addUID({ name: "yoshi", age: 40 });
+
+console.log(docThree);
+// docThree.name gives the error as the property name does not exist on this type.
+// It happens because we are not specifying exactly what this object should be.
+ */
+var addUID = function (obj) {
+    // <T extends {name: string}>(obj: T)
+    var uid = Math.floor(Math.random() * 100);
+    return __assign(__assign({}, obj), { uid: uid });
+};
+var docThree = addUID({ name: "yoshi", age: 40 });
+console.log(docThree.name);
+var docFour = {
+    uid: 1,
+    resourceName: "person",
+    data: { name: "shaun" }
+};
+var docFive = {
+    uid: 1,
+    resourceName: "person",
+    data: "hello"
+};
+var docSix = {
+    uid: 1,
+    resourceName: "person",
+    data: ["bread", "milk"]
+};
+console.log(docFour, docFive, docSix);

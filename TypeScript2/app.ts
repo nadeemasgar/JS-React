@@ -81,7 +81,7 @@ console.log(man1);
 
 // Interfaces allows you to enforce a certain structure of a class or an object
 // We donot use interface to generate object
-// Interfaces inforces the rule on a variable
+// Interfaces inforces the rule on a object on how it will look
 
 interface IsPerson {
   name: string;
@@ -153,3 +153,57 @@ docTwo = new Payment("luigi", "plumbing work", 200);
 let docs: HasFormatter[] = [];
 docs.push(docOne);
 docs.push(docTwo);
+
+/* 6. Generics */
+
+// Generics allows us to create reusable blocks of code which can be used with different types
+
+/* 
+const addUID = (obj: object) => {
+  let uid = Math.floor(Math.random() * 100);
+  return { ...obj, uid };
+};
+
+let docThree = addUID({ name: "yoshi", age: 40 });
+
+console.log(docThree);
+// docThree.name gives the error as the property name does not exist on this type.
+// It happens because we are not specifying exactly what this object should be.
+ */
+
+const addUID = <T extends object>(obj: T) => {
+  // <T extends {name: string}>(obj: T)
+  let uid = Math.floor(Math.random() * 100);
+  return { ...obj, uid };
+};
+
+let docThree = addUID({ name: "yoshi", age: 40 });
+
+console.log(docThree.name);
+
+// Generics with Interfaces
+interface Resources<T> {
+  uid: number;
+  resourceName: string;
+  data: T;
+}
+
+const docFour: Resources<object> = {
+  uid: 1,
+  resourceName: "person",
+  data: { name: "shaun" },
+};
+
+const docFive: Resources<string> = {
+  uid: 1,
+  resourceName: "person",
+  data: "hello",
+};
+
+const docSix: Resources<string[]> = {
+  uid: 1,
+  resourceName: "person",
+  data: ["bread", "milk"],
+};
+
+console.log(docFour, docFive, docSix);

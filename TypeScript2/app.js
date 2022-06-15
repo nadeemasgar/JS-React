@@ -37,3 +37,19 @@ var invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
 console.log(invoices);
+var test = /** @class */ (function () {
+    //   readonly name: string;
+    //   private age: number;
+    //   public gender: string;
+    function test(name, age, gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+    test.prototype.display = function () {
+        return "".concat(this.name, " is of ").concat(this.age, " age and of gender ").concat(this.gender);
+    };
+    return test;
+}());
+var man1 = new test("rahul", 30, "male");
+console.log(man1);

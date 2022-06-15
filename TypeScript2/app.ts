@@ -31,9 +31,9 @@ form1.addEventListener("submit", (e: Event) => {
 // Classes
 
 class Invoice {
-  client: string;
-  details: string;
-  amount: number;
+  readonly client: string; // readonly is used to read the value inside & outside of the class
+  private details: string; // private is used to not allow the value to be accessed outside the class
+  public amount: number; // public is used to change & read the value outside and inside of the class
 
   constructor(c: string, d: string, a: number) {
     this.client = c;
@@ -54,3 +54,22 @@ invoices.push(invOne);
 invoices.push(invTwo);
 
 console.log(invoices);
+
+class test {
+  //   readonly name: string;
+  //   private age: number;
+  //   public gender: string;
+
+  constructor(
+    readonly name: string,
+    private age: number,
+    public gender: string
+  ) {}
+
+  display() {
+    return `${this.name} is of ${this.age} age and of gender ${this.gender}`;
+  }
+}
+
+const man1 = new test("rahul", 30, "male");
+console.log(man1);

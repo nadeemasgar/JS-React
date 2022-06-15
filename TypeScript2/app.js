@@ -71,3 +71,32 @@ var greetPerson = function (person) {
 };
 greetPerson(me);
 console.log(me);
+var Invoice1 = /** @class */ (function () {
+    function Invoice1(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    Invoice1.prototype.format = function () {
+        return "".concat(this.client, " owes $").concat(this.amount, " for ").concat(this.details);
+    };
+    return Invoice1;
+}());
+var Payment = /** @class */ (function () {
+    function Payment(recipient, details, amount) {
+        this.recipient = recipient;
+        this.details = details;
+        this.amount = amount;
+    }
+    Payment.prototype.format = function () {
+        return "".concat(this.recipient, " owed $").concat(this.amount, " for ").concat(this.details);
+    };
+    return Payment;
+}());
+var docOne;
+var docTwo;
+docOne = new Invoice("yoshi", "web work", 250);
+docTwo = new Payment("luigi", "plumbing work", 200);
+var docs = [];
+docs.push(docOne);
+docs.push(docTwo);

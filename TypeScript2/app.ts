@@ -109,3 +109,47 @@ const greetPerson = (person: IsPerson) => {
 greetPerson(me);
 
 console.log(me);
+
+/* 5. Interfaces with classes */
+
+interface HasFormatter {
+  format(): string;
+}
+
+class Invoice1 implements HasFormatter {
+  readonly client: string; // readonly is used to read the value inside & outside of the class
+  private details: string; // private is used to not allow the value to be accessed outside the class
+  public amount: number; // public is used to change & read the value outside and inside of the class
+
+  constructor(c: string, d: string, a: number) {
+    this.client = c;
+    this.details = d;
+    this.amount = a;
+  }
+
+  format() {
+    return `${this.client} owes $${this.amount} for ${this.details}`;
+  }
+}
+
+class Payment implements HasFormatter {
+  constructor(
+    readonly recipient: string,
+    private details: string,
+    public amount: number
+  ) {}
+
+  format() {
+    return `${this.recipient} owed $${this.amount} for ${this.details}`;
+  }
+}
+
+let docOne: HasFormatter;
+let docTwo: HasFormatter;
+
+docOne = new Invoice("yoshi", "web work", 250);
+docTwo = new Payment("luigi", "plumbing work", 200);
+
+let docs: HasFormatter[] = [];
+docs.push(docOne);
+docs.push(docTwo);

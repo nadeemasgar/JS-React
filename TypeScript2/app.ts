@@ -238,3 +238,19 @@ const docEig: Resource<object> = {
   resourceType: ResourceType.PERSON,
   data: { name: "yoshi" },
 };
+
+// 8. Tuples
+
+// Tuples is similar like arrays but the type of data in each position is fixed once it's been initialized
+
+let arr = ["ryu", 25, true];
+arr[0] = false;
+arr[1] = "yoshi";
+arr = [30, false, "yoshi"];
+
+let tup: [string, number, boolean] = ["ryu", 25, true];
+// tup[0] = false
+tup[0] = "ken";
+tup[1] = 10;
+
+// Sometimes, we have to use tuples while using spread operator on array => [...arr]

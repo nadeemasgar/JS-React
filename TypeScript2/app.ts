@@ -207,3 +207,34 @@ const docSix: Resources<string[]> = {
 };
 
 console.log(docFour, docFive, docSix);
+
+// 7. ENUMS
+
+// Enums are a special type in typescript that allows you to store set of constant or keywords and associate them with a numeric value
+// Enum is used to specify descriptive constants and associate each one with a numeric value
+
+enum ResourceType {
+  BOOK,
+  AUTHOR,
+  FILM,
+  DIRECTOR,
+  PERSON,
+}
+
+interface Resource<T> {
+  uid: number;
+  resourceType: number;
+  data: T;
+}
+
+const docSev: Resource<object> = {
+  uid: 1,
+  resourceType: ResourceType.DIRECTOR,
+  data: { title: "name of the wind" },
+};
+
+const docEig: Resource<object> = {
+  uid: 10,
+  resourceType: ResourceType.PERSON,
+  data: { name: "yoshi" },
+};

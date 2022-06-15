@@ -148,3 +148,24 @@ var docSix = {
     data: ["bread", "milk"]
 };
 console.log(docFour, docFive, docSix);
+// 7. ENUMS
+// Enums are a special type in typescript that allows you to store set of constant or keywords and associate them with a numeric value
+// Enum is used to specify descriptive constants and associate each one with a numeric value
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
+var docSev = {
+    uid: 1,
+    resourceType: ResourceType.DIRECTOR,
+    data: { title: "name of the wind" }
+};
+var docEig = {
+    uid: 10,
+    resourceType: ResourceType.PERSON,
+    data: { name: "yoshi" }
+};

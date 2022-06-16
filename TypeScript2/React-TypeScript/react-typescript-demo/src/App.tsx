@@ -44,3 +44,9 @@ function App() {
 }
 
 export default App;
+
+/*  Tips on Prop types
+    1. You can destructure props while defining the component
+    2. Exporting Types
+    3. Re-using Types
+*/

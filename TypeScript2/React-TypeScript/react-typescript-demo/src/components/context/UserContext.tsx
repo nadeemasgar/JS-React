@@ -14,7 +14,7 @@ type UserContextProviderProps = {
   children: React.ReactNode;
 };
 
-export const UserContext = createContext<UserContextTypes | null>(null);
+export const UserContext = createContext({} as UserContextTypes);
 
 export const UserContextProvider = ({ children }: UserContextProviderProps) => {
   const [user, setUser] = useState<AuthUser | null>(null);

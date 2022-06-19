@@ -15,6 +15,7 @@ import { ThemeContextProvider } from "./components/context/ThemeContext";
 import { Box } from "./components/context/Box";
 import { UserContextProvider } from "./components/context/UserContext";
 import { User1 } from "./components/context/User1";
+import { Counter1 } from "./components/class/Counter1";
 function App() {
   const personName = {
     first: "Bruce",
@@ -54,6 +55,7 @@ function App() {
       <UserContextProvider>
         <User1 />
       </UserContextProvider>
+      <Counter1 message="The count value is" />
     </div>
   );
 }
